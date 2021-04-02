@@ -4,7 +4,8 @@ Custom CSS for Discord that styles usernames of Discord messages and messages co
 ![Style example](https://i.imgur.com/mpGmLj3.png)
 
 ## Installation
-* Install [BandagedDB](https://rauenzi.github.io/BetterDiscordApp/).
+* Install [BetterDiscord](https://github.com/betterdiscord/installer).
+* Ensure 'Normalize Classes' is enabled under BetterDiscord's general settings.
 * Copy-paste the CSS contents of `style.css` into the 'Custom CSS' settings added to the Discord settings.
 
 ![Installation example](https://i.imgur.com/6QanIo0.png)
