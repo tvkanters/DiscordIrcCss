@@ -174,7 +174,7 @@ a[href="https://support.discordapp.com"] {
 
 /*** Channels ***/
 .da-sidebar {
-    width:160px;
+    width:160px !important;
 }
 .da-sidebar .da-children > .da-iconItem {
     display:none !important; 
