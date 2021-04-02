@@ -1,7 +1,8 @@
 # Discord IRC CSS
 Custom CSS for Discord that styles usernames of Discord messages and messages coming in through an IRC bridge seamlessly.
 
-![Style example](https://i.imgur.com/mpGmLj3.png)
+![Style example](https://user-images.githubusercontent.com/2603160/113452077-9628c880-9403-11eb-9961-38953337036e.png)
+
 
 ## Installation
 * Install [BetterDiscord](https://github.com/betterdiscord/installer).
