@@ -128,7 +128,7 @@ a[href="https://support.discordapp.com"] {
     width:38px;
 }
 .da-container > .da-base {
-    left:38px;
+    left:0px;
 }
 .da-friendsOnline,
 .da-guildSeparator {
