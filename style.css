@@ -1,26 +1,110 @@
+
 /*** Sizing ***/
 
-/* Chat message padding */
-.da-containerCompact {
-    padding-top:0;
-    padding-bottom:0;
-}
-/* Input field */
-.da-content form {
+[class^="chatContent-"] > form {
     margin-left:5px;
     margin-right:5px;
 }
-.da-channelTextArea > .da-inner {
-    margin-top:-15px;
+/* Chat message padding */
+[class^="message-"] {
+    padding-top:0 !important;
+    padding-bottom:0 !important;
+    margin-top:0 !important;
+    margin-bottom:0 !important;
 }
 /* Overflowed lines indentation */
-.da-message .da-isCompact {
-    margin-left:7ch;
-    text-indent:-7ch;
+[class^="message-"][class*=compact-] {
+    padding-left:6ch;
+}
+[class^="message-"][class*=compact-] [class^="contents-"] {
+    margin-left:-8ch;
+    text-indent:-6ch;
 }
 /* Chat padding */
-.da-systemPad > :last-child {
-    padding-bottom:10px;
+[class^="scrollerSpacer-"] {
+    height:15px;
+}
+
+
+
+/*** Top bar ***/
+
+/* Channel name */
+[class^="chat-"] > [class^="title-"] > [class^="children-"] > [class^="iconWrapper-"],
+[class^="chat-"] > [class^="title-"] > [class^="children-"] > [class^="title-"],
+[class^="chat-"] > [class^="title-"] > [class^="children-"] > [class^="divider-"] {
+    display:none;
+}
+/* Mute icon */
+div[aria-label^="Mute channel"] {
+    display:none;
+}
+/* Help icon */
+a[href="https://support.discord.com"] {
+    display:none;
+}
+
+
+
+/*** Left bar ***/
+
+/* Width */
+[class*="guilds-"] {
+    width:38px !important;
+}
+/* Separator */
+[class*="tutorialContainer-"]:first-child > [class*="listItem-"] {
+    margin-bottom:0px;
+}
+[class*="guildSeparator-"] {
+    display:none;
+}
+/* Selected channel indicator */
+[class^="pill-"] {
+    height:26px !important;
+    transform:scaleY(0.5);
+}
+[class^="pill-"] > [class^="item-"] {
+    width:8px;
+}
+/* Left bar icons */
+[class*="guilds-"] [class*="listItemWrapper-"] > [class*="wrapper-"],
+[class*="guilds-"] [class*="listItemWrapper-"] > [class*="wrapper-"] > svg,
+[class*="guilds-"] [class*="blobContainer-"] > [class*="wrapper-"],
+[class*="guilds-"] [class*="blobContainer-"] > [class*="wrapper-"] > svg {
+    width:26px;
+    height:26px;
+}
+svg[class^="homeIcon-"] {
+    width:26px;
+    height:26px;
+    font-size:26px;
+    line-height:26px;
+}
+
+
+
+/*** Channels ***/
+
+/* Width */
+[class^="sidebar-"] {
+    width:160px !important;
+}
+/* Invite icon */
+[class^="sidebar-"] [aria-label="Create Invite"] {
+    display:none !important;
+}
+[class^="sidebar-"] [class^="iconVisibility-"]:hover [aria-label="Create Invite"] {
+    display:block !important;
+}
+
+
+
+/*** Text ***/
+
+/* Text colour */
+.theme-dark [class^="markup-"] {
+    color:#eee;
 }
 
 
@@ -28,23 +112,22 @@
 /*** IRC ***/
 
 /* Bot tag */
-.da-botTag {
+[class^="botTag"] {
     display:none;
 }
-/* Pink chat bubble */
-.da-botTag + .da-username {
+/* Bot chat bubble */
+[class^="botTag"] + [class^="username-"] {
     display:none;
 }
 /* Margin between name and message */
-.da-headerText {
+[class^="headerText-"] {
     margin-right:0 !important;
 }
-.da-username {
+[class^="username-"] {
     margin-right:0.25rem;
 }
-
-/* IRC user names */
-.da-messageContent strong:nth-child(1) {
+/* User names */
+[class*="messageContent-"] strong:nth-child(1) {
     font-weight:normal;
     color:#ccc;
     margin-right:0.25rem;
@@ -53,23 +136,14 @@
 
 
 /*** Discord user names ***/
-.da-username {
+[class^="username-"] {
     font-size:100%;
 }
-.da-username:before {
+[class^="username-"]:before {
     content:"<";
 }
-.da-username:after {
+[class^="username-"]:after {
     content:">";
-}
-
-
-
-/*** Text ***/
-
-/* Text colour */
-.theme-dark .da-markup {
-    color:#eee;
 }
 
 
@@ -77,105 +151,10 @@
 /*** Timestamps ***/
 
 /* Always visible */
-.theme-dark .da-timestampVisibleOnHover {
+.theme-dark [class*="timestampVisibleOnHover"] {
     opacity:1;
 }
 /* Thinner */
-.da-timestampCompactBase {
+[class*="timestampCompactBase"] {
     width:calc(5ch);
-}
-
-
-
-/*** Top bar ***/
-
-/* Channel name */
-.da-chat > .da-title > .da-children > .da-iconWrapper,
-.da-chat > .da-title > .da-children > .da-base,
-.da-chat > .da-title > .da-children > .da-divider {
-    display:none;
-}
-.da-topic:before {
-    display:none;
-}
-.da-topic {
-    padding-left:0;
-    margin-left:0;
-}
-/* Mute icon */
-div[aria-label^="Muting a channel"] {
-    display:none;
-}
-/* Help icon */
-a[href="https://support.discordapp.com"] {
-    display:none;
-}
-
-
-
-/*** Left bar ***/
-
-/* Discord icon */
-.da-systemPad > :first-child {
-    margin:0;
-}
-/* Width */
-.da-guildsWrapper {
-    width:36px;
-}
-.da-layers > div > .da-container > .da-wrapper,
-.da-scollerWrap {
-    width:38px;
-}
-.da-container > .da-base {
-    left:0px;
-}
-.da-friendsOnline,
-.da-guildSeparator {
-    display:none;
-}
-.da-wrapper .da-listItem {
-    width:38px;
-}
-/* Channel indicator */
-.da-wrapper .da-listItem > .da-pill {
-    max-height:20px;
-}
-/* Selected channel indicator */
-.da-wrapper .da-listItem > .da-pill > .da-item {
-    max-height:20px;
-}
-/* Left bar icons */
-.da-blob,
-.da-blob > svg,
-.da-guild,
-.da-guild .da-guildInner,
-.guildInner a,
-.da-blobContainer > div,
-.da-blobContainer svg,
-.da-listItemWrapper > div,
-.da-listItemWrapper svg,
-.da-systemPad > .da-listItem > .da-circleButtonMask,
-.da-unreadMentionsIndicatorTop + .da-scrollerWrap .da-wrapper > svg,
-.da-unreadMentionsIndicatorTop + .da-scrollerWrap .da-listItemWrapper,
-.da-homeButton {
-    width:20px;
-    height:20px;
-    font-size:20px;
-    line-height:20px;
-}
-.da-unreadMentionsIndicatorTop + .da-scrollerWrap .da-childWrapper > svg,
-.da-unreadMentionsIndicatorTop + .da-scrollerWrap .da-circleIconButton > svg {
-    width:30px;
-    height:30px;
-}
-
-
-
-/*** Channels ***/
-.da-sidebar {
-    width:160px !important;
-}
-.da-sidebar .da-children > .da-iconItem {
-    display:none !important; 
 }
