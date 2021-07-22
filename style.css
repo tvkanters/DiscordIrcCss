@@ -22,7 +22,7 @@
 }
 /* Chat padding */
 [class^="scrollerSpacer-"] {
-    height:15px;
+    height:22px;
 }
 
 
@@ -36,7 +36,7 @@
     display:none;
 }
 /* Mute icon */
-div[aria-label^="Mute channel"] {
+div[aria-label^="Mute channel" i] {
     display:none;
 }
 /* Help icon */
@@ -91,11 +91,8 @@ svg[class^="homeIcon-"] {
     width:160px !important;
 }
 /* Invite icon */
-[class^="sidebar-"] [aria-label="Create Invite"] {
+[class^="sidebar-"] [aria-label="Create Invite" i] {
     display:none !important;
-}
-[class^="sidebar-"] [class^="iconVisibility-"]:hover [aria-label="Create Invite"] {
-    display:block !important;
 }
 
 
