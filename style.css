@@ -49,11 +49,12 @@ a[href="https://support.discord.com"] {
 /*** Left bar ***/
 
 /* Width */
-[class*="guilds-"] {
+[class*="guilds-"],
+[class*="guilds-"] [class*="listItem-"] {
     width:38px !important;
 }
 /* Separator */
-[class*="tutorialContainer-"]:first-child > [class*="listItem-"] {
+[class*="tutorialContainer-"] ~ [class*="listItem-"] {
     margin-bottom:0px;
 }
 [class*="guildSeparator-"] {
@@ -81,6 +82,21 @@ svg[class^="homeIcon-"] {
     font-size:26px;
     line-height:26px;
 }
+/* Voice users */
+[class^="sidebar-"] [class^="list-"] {
+    padding-left:2px;
+}
+/* Voice buttons */
+[class^="sidebar-"] [class^="actionButtons-"] button {
+    font-size:0px;
+}
+[class^="sidebar-"] [class^="actionButtons-"] svg {
+    margin:0px;
+}
+/* Live icon */
+[class^="voiceUser-"] [class^="live-"] {
+    font-size:0px;
+}
 
 
 
@@ -93,6 +109,10 @@ svg[class^="homeIcon-"] {
 /* Invite icon */
 [class^="sidebar-"] [aria-label="Create Invite" i] {
     display:none !important;
+}
+/* Name overlay (to cover width) */
+[aria-label^="User area" i] > [class^="container-"] > :last-child > button {
+    width:34px;
 }
 
 
