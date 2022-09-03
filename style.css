@@ -31,7 +31,7 @@
 
 /* Channel name */
 [class^="chat-"] > [class^="title-"] > [class^="children-"] > [class^="iconWrapper-"],
-[class^="chat-"] > [class^="title-"] > [class^="children-"] > [class^="title-"],
+[class^="chat-"] > [class^="title-"] > [class^="children-"] > [class^="titleWrapper-"],
 [class^="chat-"] > [class^="title-"] > [class^="children-"] > [class^="divider-"] {
     display:none;
 }
@@ -105,6 +105,9 @@ use[href$="upper_badge_masks"] {
 [class^="sidebar-"] [aria-label="Create Invite" i],
 [class^="sidebar-"] [aria-label="Invite to Server" i] {
     display:none !important;
+}
+[class^="sidebar-"] [class^="iconVisibility-"] [class^="channelInfo-"] {
+    margin:0px;
 }
 /* Name overlay (to cover width) */
 [aria-label^="User area" i] > [class^="container-"] {
