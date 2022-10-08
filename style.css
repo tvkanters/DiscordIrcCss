@@ -16,7 +16,7 @@
 [class^="message-"][class*=compact-] {
     padding-left:6ch;
 }
-[class^="message-"][class*=compact-] [class^="contents-"] {
+[class^="message-"][class*=compact-] > [class^="contents-"] {
     margin-left:-8ch;
     text-indent:-6ch;
 }
