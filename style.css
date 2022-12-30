@@ -24,6 +24,10 @@
 [class^="scrollerSpacer-"] {
     height:22px;
 }
+/* Video embeds */
+[class*="embedFull"] [class^="embedMedia"] {
+    padding-bottom:16px;
+}
 
 
 
