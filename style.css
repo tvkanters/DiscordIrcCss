@@ -164,7 +164,7 @@ use[href$="upper_badge_masks"] {
 /*** IRC ***/
 
 /* Bot tag */
-[class*="hasSystemTag"], [class^="botTag"], [class^="botTag"] + [class^="username-"] {
+[class*="hasSystemTag"], [class^="botTag"], [class^="botTag"] + [class^="username-"], [class*="hasBadges-"] {
     display:none;
 }
 /* Margin between name and message */
