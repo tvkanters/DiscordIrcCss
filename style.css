@@ -33,9 +33,9 @@
 /*** Top bar ***/
 
 /* Channel name */
-[class^="chat-"] > [class^="title-"] > [class^="children-"] > [class^="iconWrapper-"],
-[class^="chat-"] > [class^="title-"] > [class^="children-"] > [class^="titleWrapper-"],
-[class^="chat-"] > [class^="title-"] > [class^="children-"] > [class^="divider-"] {
+[class^="chat-"] > [class^="title-"] [class^="children-"] > [class^="iconWrapper-"],
+[class^="chat-"] > [class^="title-"] [class^="children-"] > [class^="titleWrapper-"],
+[class^="chat-"] > [class^="title-"] [class^="children-"] > [class^="divider-"] {
     display:none;
 }
 /* Mute icon */
