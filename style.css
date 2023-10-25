@@ -21,7 +21,7 @@
 }
 /* Padding between chat and input field */
 [class^="scrollerSpacer_"] {
-    max-height:18px !important;
+    max-height:22px !important;
 }
 /* Video embeds */
 [class*="embedFull"] [class^="embedMedia"] {
@@ -201,7 +201,7 @@ svg[class^="homeIcon_"] {
     opacity:1;
 }
 /* Thinner */
-[class*="latin12CompactTimeStamp_"] {
+[class^="latin12CompactTimeStamp_"] {
     width:calc(5ch) !important;
 }
 
