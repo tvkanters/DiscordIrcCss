@@ -27,15 +27,22 @@
 [class*="embedFull"] [class^="embedMedia"] {
     padding-bottom:16px;
 }
+/* Embed clutter */
+article[class^=embedWrapper] {
+    max-width:2000px !important;
+}
+article [class^=embedProvider] {
+    display:none;
+}
 
 
 
 /*** Top bar ***/
 
 /* Channel name */
-[class^="chat_"] > [class^="title_"] [class^="children_"] > [class^="iconWrapper_"],
-[class^="chat_"] > [class^="title_"] [class^="children_"] > [class^="titleWrapper_"],
-[class^="chat_"] > [class^="title_"] [class^="children_"] > [class^="divider_"] {
+[class^="chat_"] > [class^="subtitleContainer_"] > [class^="title_"] [class^="children_"] > [class^="iconWrapper_"],
+[class^="chat_"] > [class^="subtitleContainer_"] > [class^="title_"] [class^="children_"] > [class^="titleWrapper_"],
+[class^="chat_"] > [class^="subtitleContainer_"] > [class^="title_"] [class^="children_"] > [class^="divider_"] {
     display:none;
 }
 /* Mute/notifications icon */
@@ -48,6 +55,10 @@ a[href="https://support.discord.com"] {
 }
 /* Input field icon spam */
 [aria-label="Send a gift"], [aria-label="Open GIF picker"], [aria-label="Open sticker picker"] {
+    display:none !important;
+}
+/* Report bug/help center */
+[aria-label="Help"] {
     display:none !important;
 }
 
@@ -88,6 +99,10 @@ svg[class^="homeIcon_"] {
     height:26px;
     font-size:26px;
     line-height:26px;
+}
+/* Events */
+[class^=channelNotice_] > [class^=textBlock_] {
+    white-space: normal;
 }
 
 
@@ -162,8 +177,18 @@ svg[class^="homeIcon_"] {
 /*** IRC ***/
 
 /* Bot tag */
-[class*="hasSystemTag"], [class^="botTag"], [class^="botTag"] + [class^="username_"], [class*="hasBadges_"] {
+[class*="hasSystemTag"], [class^="botTag"], [class^="botTag"] + [class^="username_"] {
     display:none;
+}
+/* Poll badge */
+[class*="hasBadges_"] {
+    font-size: 0; 
+}
+[class*="hasBadges_"] > * {
+    font-size: 16px !important;
+}
+[class*="badgesContainer_"] {
+    margin-left:4px !important;
 }
 /* Margin between name and message */
 [class^="headerText_"] {
@@ -215,5 +240,9 @@ svg[class^="homeIcon_"] {
 }
 /* Stickers */
 [class*="emojiStickersDivider"], [class*="emojiStickersDivider"] ~ div {
+    display:none;
+}
+/* Emojis */
+[class^="nitroTopDividerContainer_"], [class^="premiumHeader_"], [class*="premiumEmoji_"] {
     display:none;
 }
