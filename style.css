@@ -19,10 +19,6 @@
     margin-left:-8ch;
     text-indent:-6ch;
 }
-/* Padding between chat and input field */
-[class^="scrollerSpacer_"] {
-    max-height:22px !important;
-}
 /* Video embeds */
 [class*="embedFull"] [class^="embedMedia"] {
     padding-bottom:16px;
@@ -34,27 +30,54 @@ article[class^=embedWrapper] {
 article [class^=embedProvider] {
     display:none;
 }
+/* Replies */
+div[class^=repliedMessage_] {
+    margin-left:0px !important;
+}
+div[class^=repliedMessageClickableSpine_] {
+    margin-left:15px !important;
+}
+/* Input field icon spam */
+[aria-label="Send a gift"], [aria-label="Open GIF picker"], [aria-label="Open sticker picker"] {
+    display:none !important;
+}
 
 
 
 /*** Top bar ***/
 
+/* Title bar spacing */
+div[data-windows="true"] > div[class^=title_] {
+    padding-left: 8px;
+    justify-content: left;
+}
+div[data-windows="true"] > div[class^=trailing_] {
+    gap:0;
+}
 /* Channel name */
 [class^="chat_"] > [class^="subtitleContainer_"] > [class^="title_"] [class^="children_"] > [class^="iconWrapper_"],
 [class^="chat_"] > [class^="subtitleContainer_"] > [class^="title_"] [class^="children_"] > [class^="titleWrapper_"],
-[class^="chat_"] > [class^="subtitleContainer_"] > [class^="title_"] [class^="children_"] > [class^="divider_"] {
+[class^="chat_"] > [class^="subtitleContainer_"] > [class^="title_"] [class^="children_"] > [class^="divider_"],
+[class^="chat_"] > [class^="subtitleContainer_"] > [class^="title_"] [class^="children_"] > [class^="dot_"] {
     display:none;
+}
+[class^="chat_"] > [class^="subtitleContainer_"] > [class^="title_"] [class^="children_"] > [class^="topic_"] {
+    margin-left:0px;
+}
+/* Search bar */
+div[class^="searchBar_"] {
+    width:150px !important;
 }
 /* Mute/notifications icon */
 div[aria-label^="Notification Settings" i] {
-    display:none;
+    display:none !important;
 }
 /* Help icon */
 a[href="https://support.discord.com"] {
-    display:none;
+    display:none !important;
 }
-/* Input field icon spam */
-[aria-label="Send a gift"], [aria-label="Open GIF picker"], [aria-label="Open sticker picker"] {
+/* Bookmarks icon */
+div[aria-label^="Bookmarks" i] {
     display:none !important;
 }
 /* Report bug/help center */
@@ -69,7 +92,7 @@ a[href="https://support.discord.com"] {
 /* Width */
 [class*="guilds_"],
 [class*="guilds_"] [class*="listItem_"] {
-    width:38px !important;
+    width:34px !important;
 }
 /* Separator */
 [class*="tutorialContainer_"] ~ [class*="listItem_"] {
@@ -93,6 +116,11 @@ a[href="https://support.discord.com"] {
 [class*="guilds_"] [class*="blobContainer_"] > [class*="wrapper_"] > svg {
     width:26px;
     height:26px;
+    margin-left:3px;
+}
+[class*="guilds_"] [class*="listItemWrapper_"] > [class*="wrapper_"] > svg,
+[class*="guilds_"] [class*="blobContainer_"] > [class*="wrapper_"] > svg {
+    transform:translate(0px, 4px) !important;
 }
 svg[class^="homeIcon_"] {
     width:26px;
@@ -111,8 +139,10 @@ svg[class^="homeIcon_"] {
 /*** Channels ***/
 
 /* Width */
-[class^="sidebar_"] {
+@layer {
+[class^="sidebarList_"] {
     width:160px !important;
+}
 }
 /* Threads */
 [data-list-item-id^="channels_"] { 
@@ -131,7 +161,7 @@ svg[class^="homeIcon_"] {
     position: relative;
 }
 [aria-label^="User area" i] > [class^="container_"] > :last-child {
-    width: 100%;
+    width: 120px;
     height: 100%;
     right: 0;
     display: none;
@@ -140,6 +170,7 @@ svg[class^="homeIcon_"] {
     align-items: center;
     padding-right:10px;
     background-color: var(--background-secondary-alt);
+    border-radius: var(--radius-sm);
 }
 [aria-label^="User area" i] > [class^="container_"]:hover > :last-child {
     display: flex;
@@ -198,10 +229,15 @@ svg[class^="homeIcon_"] {
     margin-right:0.25rem;
 }
 /* User names */
-[class*="messageContent_"] strong:nth-child(1):has(span + span) {
+[class*="messageContent_"] strong:nth-child(1):has(span):has(+span) {
     font-weight:normal;
     color:#ccc;
     margin-right:0.25rem;
+}
+
+/* Highlights for all replies */
+div[class^=message_]:has(div[aria-label$="replying to YOUR-NAME"]:first-child) {
+    background: var(--background-mentioned);
 }
 
 
@@ -245,4 +281,13 @@ svg[class^="homeIcon_"] {
 /* Emojis */
 [class^="nitroTopDividerContainer_"], [class^="premiumHeader_"], [class*="premiumEmoji_"] {
     display:none;
+}
+/** App launcher */
+[class^="channelAppLauncher_"] {
+    display:none;
+}
+
+/* Minecraft admin role */
+[style*="rgb(31, 139, 76)"] {
+    color: rgb(52, 152, 219) !important;
 }
