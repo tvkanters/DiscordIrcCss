@@ -38,8 +38,12 @@ div[class^=repliedMessageClickableSpine_] {
     margin-left:15px !important;
 }
 /* Input field icon spam */
-[aria-label="Send a gift"], [aria-label="Open GIF picker"], [aria-label="Open sticker picker"] {
+[aria-label="Send a gift"], [aria-label="Open GIF picker"], [aria-label="Open sticker picker"], [class^=channelAppLauncher_] {
     display:none !important;
+}
+/** Input box */
+[class^=textArea__] > div > div {
+    margin-left:0px !important;
 }
 
 
@@ -47,6 +51,9 @@ div[class^=repliedMessageClickableSpine_] {
 /*** Top bar ***/
 
 /* Title bar spacing */
+div[data-windows="true"] > div[class^=title_] div[class^=icon_] {
+    display:none;
+}
 div[data-windows="true"] > div[class^=title_] {
     padding-left: 8px;
     justify-content: left;
@@ -106,7 +113,7 @@ div[aria-label^="Bookmarks" i] {
     height:26px !important;
     transform:scaleY(0.5);
 }
-[class^="pill_"] > [class^="item_"] {
+[class^="pill_"] > span {
     width:6px;
 }
 /* Left bar icons */
@@ -114,19 +121,20 @@ div[aria-label^="Bookmarks" i] {
 [class*="guilds_"] [class*="listItemWrapper_"] > [class*="wrapper_"] > svg,
 [class*="guilds_"] [class*="blobContainer_"] > [class*="wrapper_"],
 [class*="guilds_"] [class*="blobContainer_"] > [class*="wrapper_"] > svg {
-    width:26px;
-    height:26px;
-    margin-left:3px;
+    width:30px !important;
+    height:30px !important;
+    margin-left:3px !important;
+    margin-bottom:-8px !important;
 }
 [class*="guilds_"] [class*="listItemWrapper_"] > [class*="wrapper_"] > svg,
 [class*="guilds_"] [class*="blobContainer_"] > [class*="wrapper_"] > svg {
-    transform:translate(0px, 4px) !important;
+    transform:translate(0px, 2px) !important;
 }
 svg[class^="homeIcon_"] {
-    width:26px;
-    height:26px;
-    font-size:26px;
-    line-height:26px;
+    width:26px !important;
+    height:26px !important;
+    font-size:26px !important;
+    line-height:26px !important;
 }
 /* Events */
 [class^=channelNotice_] > [class^=textBlock_] {
@@ -141,16 +149,25 @@ svg[class^="homeIcon_"] {
 /* Width */
 @layer {
 [class^="sidebarList_"] {
-    width:160px !important;
+    width:170px !important;
 }
+}
+/* Channel padding */
+[class^="sidebarList_"] [class^="scroller_"] {
+    margin-right:-4px;
+}
+/* Nitro icon */
+[class^="guildIconV2Container__"] {
+    display:none !important;
 }
 /* Threads */
 [data-list-item-id^="channels_"] { 
     text-transform: lowercase;
 }
-/* Invite icon */
+/* Invite/context menu icon */
 [class^="sidebar_"] [aria-label="Create Invite" i],
-[class^="sidebar_"] [aria-label="Invite to Server" i] {
+[class^="sidebar_"] [aria-label="Invite to Server" i],
+[class^="sidebar_"] [aria-label="Channel Options" i] {
     display:none !important;
 }
 [class^="sidebar_"] [class^="iconVisibility_"] [class^="channelInfo_"] {
@@ -161,7 +178,7 @@ svg[class^="homeIcon_"] {
     position: relative;
 }
 [aria-label^="User area" i] > [class^="container_"] > :last-child {
-    width: 120px;
+    width: 123px;
     height: 100%;
     right: 0;
     display: none;
@@ -236,7 +253,7 @@ svg[class^="homeIcon_"] {
 }
 
 /* Highlights for all replies */
-div[class^=message_]:has(div[aria-label$="replying to YOUR-NAME"]:first-child) {
+div[class^=message_]:has(div[aria-label$="replying to Ezid"]:first-child) {
     background: var(--background-mentioned);
 }
 
