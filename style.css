@@ -51,14 +51,14 @@ div[class^=repliedMessageClickableSpine_] {
 /*** Top bar ***/
 
 /* Title bar spacing */
-div[data-windows="true"] > div[class^=title_] div[class^=icon_] {
+div[class^=bar_] > div[class^=title_] div[class^=icon_] {
     display:none;
 }
-div[data-windows="true"] > div[class^=title_] {
+div[class^=bar_] > div[class^=title_] {
     padding-left: 8px;
     justify-content: left;
 }
-div[data-windows="true"] > div[class^=trailing_] {
+div[class^=bar_] > div[class^=trailing_] {
     gap:0;
 }
 /* Channel name */
@@ -100,6 +100,10 @@ div[aria-label^="Bookmarks" i] {
 [class*="guilds_"],
 [class*="guilds_"] [class*="listItem_"] {
     width:34px !important;
+}
+/* Boost icon */
+[class^="guildIconContainer_"] {
+    display: none !important;
 }
 /* Separator */
 [class*="tutorialContainer_"] ~ [class*="listItem_"] {
