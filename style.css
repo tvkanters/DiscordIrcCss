@@ -232,6 +232,10 @@ svg[class^="homeIcon_"] {
 [class*="hasSystemTag"], [class^="botTag"], [class^="botTag"] + [class^="username_"] {
     display:none;
 }
+/* Cringy ass server spam badges */
+[class^="chiplet"] {
+    display:none !important; 
+}
 /* Poll badge */
 [class*="hasBadges_"] {
     font-size: 0; 
