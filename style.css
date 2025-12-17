@@ -65,7 +65,7 @@ div[class*=repliedMessageClickableSpine] {
 /*** Top bar ***/
 
 /* Title bar spacing */
-div[class*=bar] > div[class*=title] div[class*=icon_] {
+div[class*=bar] > div[class*=title] div[class*=icon] {
     display:none;
 }
 div[class*=bar] > div[class*=title] {
@@ -175,11 +175,11 @@ svg[class*="homeIcon"] {
     margin-right:-4px;
 }
 /* Nitro icon */
-[class*="guildIconV2Container_"] {
+[class*="guildIconV2Container"] {
     display:none !important;
 }
 /* Threads */
-[data-list-item-id^="channels_"] { 
+[data-list-item-id^="channels"] { 
     text-transform: lowercase;
 }
 /* Invite/context menu icon in header */
@@ -258,13 +258,13 @@ svg[class*="homeIcon"] {
     display:none !important; 
 }
 /* Poll badge */
-[class*="hasBadges_"] {
+[class*="hasBadges"] {
     font-size: 0; 
 }
-[class*="hasBadges_"] > * {
+[class*="hasBadges"] > * {
     font-size: 16px !important;
 }
-[class*="badgesContainer_"] {
+[class*="badgesContainer"] {
     margin-left:4px !important;
 }
 /* Margin between name and message */
@@ -275,7 +275,7 @@ svg[class*="homeIcon"] {
     margin-right:0.25rem;
 }
 /* User names */
-[class*="messageContent_"] strong:nth-child(1):has(span):has(+span) {
+[class*="messageContent"] strong:nth-child(1):has(span):has(+span) {
     font-weight:normal;
     color:#ccc;
     margin-right:0.25rem;
@@ -308,7 +308,7 @@ div[class*=message-]:has(div[aria-label$="replying to Ezid"]:first-child) {
     opacity:1;
 }
 /* Thinner */
-[class*="latin12CompactTimeStamp"] {
+span[class*="latin12CompactTimeStamp"] {
     width:calc(5ch) !important;
 }
 .vc-reply-timestamp {
@@ -331,7 +331,7 @@ div[class*=message-]:has(div[aria-label$="replying to Ezid"]:first-child) {
     display:none;
 }
 /* Emojis */
-[class*="nitroTopDividerContainer"], [class*="premiumHeader"], [class*="premiumEmoji_"] {
+[class*="nitroTopDividerContainer"], [class*="premiumHeader"], [class*="premiumEmoji"] {
     display:none;
 }
 /** App launcher */
