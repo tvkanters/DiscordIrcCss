@@ -34,7 +34,7 @@ article [class*=embedProvider] {
 div[class*=repliedMessage] {
     margin-left:0px !important;
 }
-div[class*=repliedMessageClickableSpine] {
+div[aria-label="Jump to Reply"] {
     margin-left:20px !important;
 }
 /* Input field icon spam */
@@ -138,15 +138,21 @@ div[aria-label^="Bookmarks" i] {
 [aria-label="Servers sidebar"] [class*="listItemWrapper"] > [class*="wrapper"],
 [aria-label="Servers sidebar"] [class*="listItemWrapper"] > [class*="wrapper"] > svg,
 [aria-label="Servers sidebar"] [class*="blobContainer"] > [class*="wrapper"],
-[aria-label="Servers sidebar"] [class*="blobContainer"] > [class*="wrapper"] > svg {
+[aria-label="Servers sidebar"] [class*="blobContainer"] > [class*="wrapper"] > svg,
+[aria-label="Servers sidebar"] [aria-label="Direct Messages"] [class*="wrapper"],
+[aria-label="Servers sidebar"] [aria-label="Direct Messages"] [class*="wrapper"] > svg {
     width:30px !important;
     height:30px !important;
-    margin-left:3px !important;
+    margin-left:2px !important;
     margin-bottom:-8px !important;
 }
 [aria-label="Servers sidebar"] [class*="listItemWrapper"] > [class*="wrapper"] > svg,
-[aria-label="Servers sidebar"] [class*="blobContainer"] > [class*="wrapper"] > svg {
+[aria-label="Servers sidebar"] [class*="blobContainer"] > [class*="wrapper"] > svg,
+[aria-label="Servers sidebar"] [aria-label="Direct Messages"] [class*="wrapper"] > svg {
     transform:translate(0px, 2px) !important;
+}
+[aria-label="Servers sidebar"] [aria-label="Direct Messages"] [class*="wrapper"] > svg img {
+    transform:translate(3px, 5px) !important;
 }
 svg[class*="homeIcon"] {
     width:26px !important;
@@ -281,11 +287,6 @@ svg[class*="homeIcon"] {
     margin-right:0.25rem;
 }
 
-/* Highlights for all replies */
-div[class*=message-]:has(div[aria-label$="replying to Ezid"]:first-child) {
-    background: var(--background-mentioned);
-}
-
 
 
 /*** Discord user names ***/
@@ -337,9 +338,4 @@ span[class*="latin12CompactTimeStamp"] {
 /** App launcher */
 [class*="channelAppLauncher"] {
     display:none;
-}
-
-/* Minecraft admin role */
-[style*="rgb(31, 139, 76)"] {
-    color: rgb(52, 152, 219) !important;
 }
